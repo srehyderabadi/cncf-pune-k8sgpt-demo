@@ -1,0 +1,33 @@
+=== Ollama Service Information ===
+Service URL: http://localhost:11434
+Config Directory: /Users/vinaygattu/.ollama
+Log File: /Users/vinaygattu/.ollama/ollama.log
+
+=== API Endpoints ===
+List Models: GET http://localhost:11434/api/tags
+Generate: POST http://localhost:11434/api/generate
+Pull Model: POST http://localhost:11434/api/pull
+
+=== Available Models ===
+NAME                ID              SIZE      MODIFIED    
+orca-mini:latest    2dbd9f439647    2.0 GB    6 hours ago    
+llama2:13b          d475bf4c50bc    7.4 GB    7 hours ago    
+mistral:7b          6577803aa9a0    4.4 GB    7 hours ago    
+
+=== Usage Examples ===
+# CLI usage
+ollama run mistral:7b "Explain Docker containers"
+
+# API usage
+curl -X POST http://localhost:11434/api/generate \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "mistral:7b",
+    "prompt": "What is Kubernetes?",
+    "stream": false
+  }'
+
+=== K8sGPT Integration ===
+# Configure K8sGPT to use Ollama
+k8sgpt auth add --backend ollama --baseurl http://localhost:11434 --model mistral:7b
+k8sgpt auth default --provider ollama
