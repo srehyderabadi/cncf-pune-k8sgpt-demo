@@ -53,7 +53,7 @@ graph TD
 ├── 💥 scenarios/
 │   ├── scenario-1/k8s/         # ImagePullBackOff demo files
 │   ├── scenario-2/k8s/         # Service selector mismatch files
-│   ├── scenario-3/k8s/         # Resource limits issue files
+│   ├── scenario-3/k8s/         # PVC volume issue files
 │   └── run-scenario.sh         # Scenario execution script
 ├── ⚙️ k8s/
 │   └── k3d-cluster.yaml       # K3D cluster configuration
@@ -124,13 +124,13 @@ The project includes 3 failure scenarios perfect for live demonstrations:
 |----------|------------|-------------|
 | **Scenario 1** | `ImagePullBackOff` | Show K8sGPT detecting image issues |
 | **Scenario 2** | Service Selector Mismatch | Demonstrate networking problems |
-| **Scenario 3** | Resource Limits | Show resource constraint analysis |
+| **Scenario 3** | PVC Volume Issue | Show persistent volume claim problems |
 
 ```bash
 # Run individual scenarios
 ./scenarios/run-scenario.sh 1  # ImagePullBackOff
 ./scenarios/run-scenario.sh 2  # Service mismatch
-./scenarios/run-scenario.sh 3  # Resource limits
+./scenarios/run-scenario.sh 3  # PVC volume issue
 ```
 
 ## 🛠️ Prerequisites

@@ -40,9 +40,9 @@ This document explains the complete structure of the CNCF Pune K8sGPT Demo repos
 │   ├── scenario-2/k8s/            # Service selector mismatch
 │   │   ├── error_2.yaml           # Broken service config
 │   │   └── fix_2.yaml             # Fixed service config
-│   ├── scenario-3/k8s/            # Resource constraints
-│   │   ├── error_3.yaml           # Resource limit issues
-│   │   └── fix_3.yaml             # Fixed resource config
+│   ├── scenario-3/k8s/            # PVC volume issue
+│   │   ├── error_3.yaml           # PVC volume issue
+│   │   └── fix_3.yaml             # Fixed PVC config
 │   └── run-scenario.sh            # Scenario execution script
 │
 └── ⚙️ k8s/                        # Kubernetes configuration

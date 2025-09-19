@@ -284,14 +284,14 @@ k8sgpt analyze --namespace demo --filter Service --explain
 ./scenarios/run-scenario.sh 2 fix
 \`\`\`
 
-##### Scenario 3: Resource Constraints
+##### Scenario 3: PVC Volume Issue
 \`\`\`bash
-# Deploy resource issue scenario
+# Deploy PVC volume issue scenario
 ./scenarios/run-scenario.sh 3
 
-# Show resource problems
-kubectl get pods -n demo
-kubectl top pods -n demo
+# Show PVC problems
+kubectl get pvc -n demo
+kubectl describe pvc -n demo
 
 # Analyze with K8sGPT
 k8sgpt analyze --namespace demo --explain
@@ -323,7 +323,7 @@ k8sgpt analyze --namespace demo --explain
 # Deploy scenarios
 ./scenarios/run-scenario.sh 1    # ImagePullBackOff
 ./scenarios/run-scenario.sh 2    # Service mismatch
-./scenarios/run-scenario.sh 3    # Resource limits
+./scenarios/run-scenario.sh 3    # PVC volume issue
 
 # Fix scenarios
 ./scenarios/run-scenario.sh 1 fix

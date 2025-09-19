@@ -22,7 +22,7 @@ usage() {
     echo "Scenarios:"
     echo "  1 - ImagePullBackOff (missing image)"
     echo "  2 - Service selector mismatch"
-    echo "  3 - Resource limits causing issues"
+    echo "  3 - PVC volume issue"
     echo ""
     echo "Actions:"
     echo "  deploy  - Deploy the scenario (default)"
@@ -53,7 +53,7 @@ deploy_scenario() {
             kubectl apply -f "$SCENARIOS_DIR/scenario-2/k8s/error_2.yaml"
             ;;
         3)
-            log_info "Scenario 3: Resource Limits - Deploying app with insufficient resources"
+            log_info "Scenario 3: PVC Volume Issue - Deploying PVC with invalid storage class"
             kubectl apply -f "$SCENARIOS_DIR/scenario-3/k8s/error_3.yaml"
             ;;
         *)
