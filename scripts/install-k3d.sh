@@ -68,6 +68,46 @@ check_prerequisites() {
     log_success "Docker is running: $(docker --version)"
 }
 
+# Function to detect user's shell configuration file
+get_shell_config() {
+    local shell_name
+    shell_name=$(basename "$SHELL")
+    
+    case "$shell_name" in
+        "zsh")
+            if [[ -f "$HOME/.zshrc" ]]; then
+                echo "$HOME/.zshrc"
+            else
+                echo "$HOME/.zshrc"  # Create if doesn't exist
+            fi
+            ;;
+        "bash")
+            if [[ -f "$HOME/.bashrc" ]]; then
+                echo "$HOME/.bashrc"
+            elif [[ -f "$HOME/.bash_profile" ]]; then
+                echo "$HOME/.bash_profile"
+            else
+                echo "$HOME/.bashrc"  # Default for bash
+            fi
+            ;;
+        "fish")
+            echo "$HOME/.config/fish/config.fish"
+            ;;
+        *)
+            # Default fallback - try common locations
+            if [[ -f "$HOME/.bashrc" ]]; then
+                echo "$HOME/.bashrc"
+            elif [[ -f "$HOME/.bash_profile" ]]; then
+                echo "$HOME/.bash_profile"
+            elif [[ -f "$HOME/.zshrc" ]]; then
+                echo "$HOME/.zshrc"
+            else
+                echo "$HOME/.profile"  # Most universal fallback
+            fi
+            ;;
+    esac
+}
+
 install_tools() {
     log_info "Installing K3D and kubectl..."
     
@@ -91,10 +131,23 @@ install_tools() {
     if ! command -v kubecolor &> /dev/null; then
         log_info "Installing kubecolor for better kubectl output..."
         brew install kubecolor
+        
+        # Detect user's shell configuration file
+        local shell_config
+        shell_config=$(get_shell_config)
+        
         # Add alias to shell config
-        if ! grep -q "alias kubectl=\"kubecolor\"" ~/.zshrc; then
-            echo 'alias kubectl="kubecolor"' >> ~/.zshrc
-            log_info "Added kubectl alias to ~/.zshrc. Reload shell to use colorized output."
+        if ! grep -q "alias kubectl=\"kubecolor\"" "$shell_config" 2>/dev/null; then
+            # Create directory if it doesn't exist (for fish shell)
+            mkdir -p "$(dirname "$shell_config")"
+            
+            echo 'alias kubectl="kubecolor"' >> "$shell_config"
+            local shell_name
+            shell_name=$(basename "$SHELL")
+            log_info "Added kubectl alias to $shell_config ($shell_name shell detected)."
+            log_info "Reload your shell or run 'source $shell_config' to use colorized output."
+        else
+            log_info "kubectl alias already exists in shell configuration"
         fi
     fi
 }

@@ -27,7 +27,7 @@ k8sgpt analyze --namespace demo --filter Pod --explain
 k8sgpt auth list
 
 # Switch to different model
-/Users/vinaygattu/.k8sgpt/switch-model.sh llama2:13b
+~/.k8sgpt/switch-model.sh llama2:13b
 
 # Remove authentication
 k8sgpt auth remove --backends ollama
@@ -66,8 +66,8 @@ k8sgpt analyze --explain
 
 ## Configuration Files
 
-- Config Directory: `/Users/vinaygattu/.k8sgpt`
-- Model Switcher: `/Users/vinaygattu/.k8sgpt/switch-model.sh`
+- Config Directory: `~/.k8sgpt`
+- Model Switcher: `~/.k8sgpt/switch-model.sh`
 - Ollama Service: `http://localhost:11434`
 
 ## Troubleshooting
@@ -91,7 +91,7 @@ k8sgpt auth add --backend ollama --baseurl http://localhost:11434 --model mistra
 ### Slow analysis
 ```bash
 # Use faster model
-/Users/vinaygattu/.k8sgpt/switch-model.sh orca-mini:latest
+~/.k8sgpt/switch-model.sh orca-mini:latest
 
 # Analyze without explanation for speed
 k8sgpt analyze --namespace demo
