@@ -5,13 +5,11 @@
 [![K3D](https://img.shields.io/badge/K3D-5.6.0-green.svg)]
 [![Ollama](https://img.shields.io/badge/Ollama-Latest-orange.svg)]
 
-> A comprehensive demo project showcasing AI-powered Kubernetes troubleshooting using K8sGPT with Ollama running on local K3D clusters. Perfect for speaker sessions, workshops, and learning!
+> A comprehensive demo project showcasing AI-powered Kubernetes troubleshooting using K8sGPT with Ollama running on local K3D clusters. Perfect for quick workshops, and learning!
 
-## 🎤 Speaker Session Ready
+This repository is designed for  **workshops**, and **educational demos**. Everything is automated with validation scripts and failure scenarios for live demonstrations.
 
-This repository is designed for **conference talks**, **workshops**, and **educational demos**. Everything is automated with validation scripts and failure scenarios for live demonstrations.
-
-## 🏗️ Architecture
+## 🏗️ Workflow and Design
 
 ```mermaid
 graph TD
