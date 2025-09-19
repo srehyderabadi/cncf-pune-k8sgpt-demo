@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cncf-pune-demo
+  namespace: demo
+  annotations:
+    k8sgpt.ai/enable: "true"
+    k8sgpt.ai/description: "CNCF Pune demo application with intentional CrashLoopBackOff"
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cncf-pune-demo
+  template:
+    metadata:
+      labels:
+        app: cncf-pune-demo
+      annotations:
+        k8sgpt.ai/enable: "true"
+    spec:
+      containers:
+      - name: nginx
+        image: cncf-pune-demo:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
