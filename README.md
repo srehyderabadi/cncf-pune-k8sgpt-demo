@@ -254,7 +254,7 @@ Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) fir
 - **Issues**: [GitHub Issues](https://github.com/yourusername/cncf-pune-k8sgpt-demo/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/yourusername/cncf-pune-k8sgpt-demo/discussions)
 - **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
-- **LinkedIn**: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- **LinkedIn**: [Vinay Gattu LinkedIn](https://www.linkedin.com/in/vinayga2/)
 
 ## 📜 License
 
