@@ -153,21 +153,6 @@ The project includes 3 failure scenarios perfect for live demonstrations:
 | **Llama2 13B** | More capable model | Ollama pull | Skipped if already downloaded |
 | **Orca Mini** | Lightweight model | Ollama pull | Skipped if already downloaded |
 
-## 🎤 For Speakers
-
-### Session Timing (45-60 minutes)
-- **Setup Demo** (5 mins): Quick installation walkthrough
-- **Architecture Overview** (10 mins): Explain components
-- **Live Demo** (20 mins): Show failure scenarios + K8sGPT analysis
-- **Deep Dive** (10 mins): Model comparison, configuration options
-- **Q&A** (10 mins): Questions and discussion
-
-### Pre-Session Checklist
-- [ ] Run `./scripts/validate-setup.sh` before session
-- [ ] Test all 3 failure scenarios
-- [ ] Verify internet connectivity for model downloads
-- [ ] Have backup slides ready
-
 ## 🧪 Validation & Testing
 
 ```bash
@@ -249,14 +234,8 @@ Contributions welcome! Please read our [Contributing Guide](CONTRIBUTING.md) fir
 
 ## 📞 Support & Contact
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/cncf-pune-k8sgpt-demo/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/cncf-pune-k8sgpt-demo/discussions)
-- **Twitter**: [@yourhandle](https://twitter.com/yourhandle)
 - **LinkedIn**: [Vinay Gattu LinkedIn](https://www.linkedin.com/in/vinayga2/)
 
-## 📜 License
-
-MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
